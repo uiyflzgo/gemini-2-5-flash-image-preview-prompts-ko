@@ -10,18 +10,20 @@
   <img src="assets/01-product-hero-perfume.jpg" width="820" alt="Sample render via the APIMart image API">
 </p>
 
-> **from $0.0125 per image** — one OpenAI-compatible endpoint at `https://api.apimart.ai/v1`, no monthly plan required. *(observed 2026-10-12)*
+> **from $0.0125 per image** — `https://api.apimart.ai/v1` OpenAI 호환 엔드포인트 하나면 되고, 월 구독 플랜은 필요 없습니다. *(2026-10-12 기준)*
 
-**[Get an API key](https://go.apimart.ai/k-d1abb5)** · **[Live pricing](https://go.apimart.ai/k-66ee15)** · **[Model page](https://go.apimart.ai/k-6940bc)** · [⚡ 60-second quickstart](#run-a-recipe-yourself)
+**[Get an API key](https://go.apimart.ai/k-d1abb5)** · **[Live pricing](https://go.apimart.ai/k-66ee15)** · **[Model page](https://go.apimart.ai/k-6940bc)** · [⚡ 60-second quickstart](#quickstart)
 
-**Why teams call Nano Banana (`gemini-2.5-flash-image-preview`) through APIMart**
+**팀들이 APIMart를 통해 Nano Banana(`gemini-2.5-flash-image-preview`)을 쓰는 이유**
 
-- **One key, entire catalog.** The same `https://api.apimart.ai/v1` base URL and `Authorization` header reach Nano Banana (`gemini-2.5-flash-image-preview`) and 300+ other image, video and language models — switch the `model` field, not your client.
-- **$1 minimum, pay as you go.** No subscription and no prepaid plan to size up front: top up from $1 and spend it on calls. There is no free quota to burn through first, so the price in this table is the price you pay.
-- **The charge comes back in the response.** Every call reports the amount billed (`cost` / `credits_cost`), so a spend number is read per call instead of guessed at month end.
-- **Async by design.** Submit, take the `task_id`, poll `GET /v1/tasks/{id}` — batching and retries are ordinary queue work, not a bespoke integration.
+- **키 하나로 카탈로그 전체를.** 동일한 `https://api.apimart.ai/v1` base URL과 `Authorization` 헤더로 Nano Banana(`gemini-2.5-flash-image-preview`)과 이미지·비디오·언어 모델 300+ 개에 접근할 수 있습니다. 바꾸는 건 `model` 필드뿐이고 클라이언트는 그대로입니다.
+- **최소 $1, 종량제.** 구독도, 사전에 규모를 정해야 하는 선불 플랜도 없습니다. $1부터 충전해 호출한 만큼만 쓰면 됩니다.
+- **과금 내역은 응답으로 돌아옵니다.** 완료된 모든 작업은 청구 금액(`cost` / `credits_cost`)을 보고하고, `failed`로 표시된 작업은 환불됩니다.
+- **비동기 설계.** 제출하고 `task_id`를 받아 `GET /v1/tasks/{id}`를 폴링하면 끝입니다. 배치와 재시도는 별도 통합이 아니라 평범한 큐 작업입니다.
 
 <!-- /conv-kit:v1 -->
+
+**다른 이름:** 나노바나나 · 나노 바나나
 
 Eight **Nano Banana prompts** listed with an example render, the ratio, and what the call costs on this route. Copy a recipe, keep the structure, swap the subject.
 
@@ -98,6 +100,17 @@ Because ratio is a layout decision, not a style one: 1:1 for catalogue and icons
 **Can I use a recipe as a template for another subject?**
 
 That is the point. Keep the structure (subject + light + framing + setting + finish) and replace the subject; changing everything at once makes it impossible to tell which phrase moved the output.
+
+<!-- related-repos:auto -->
+## Related repositories
+
+- **Same model, this language** — the other half of this pair: [gemini-2-5-flash-image-preview-api-ko](https://github.com/uiyflzgo/gemini-2-5-flash-image-preview-api-ko)
+- **Same model, other languages** — 9 more language builds: 中文 [gemini-2-5-flash-image-preview-api-cn](https://github.com/hm-5j/gemini-2-5-flash-image-preview-api-cn) · Deutsch [gemini-2-5-flash-image-preview-api-de](https://github.com/kn6f69s2b8j9/gemini-2-5-flash-image-preview-api-de) · Español [gemini-2-5-flash-image-preview-api-es](https://github.com/ekw3w/gemini-2-5-flash-image-preview-api-es) · Français [gemini-2-5-flash-image-preview-api-fr](https://github.com/haftslut7ha/gemini-2-5-flash-image-preview-api-fr) · Relay/gateway [gemini-2-5-flash-image-preview-api-gateway](https://github.com/mcqdlebg/gemini-2-5-flash-image-preview-api-gateway) · Bahasa [gemini-2-5-flash-image-preview-api-id](https://github.com/gmrg0s/gemini-2-5-flash-image-preview-api-id) · 日本語 [gemini-2-5-flash-image-preview-api-ja](https://github.com/ic7skkh/gemini-2-5-flash-image-preview-api-ja) · Português [gemini-2-5-flash-image-preview-api-pt](https://github.com/ycx8l0/gemini-2-5-flash-image-preview-api-pt) · Русский [gemini-2-5-flash-image-preview-api-ru](https://github.com/zwtdva8/gemini-2-5-flash-image-preview-api-ru)
+- **More models in this language** — [midjourney-api-ko](https://github.com/ocvewn2-9ueo/midjourney-api-ko) · [nano-banana-api-ko](https://github.com/l-2jb09sq/nano-banana-api-ko) · [gemini-3-1-flash-image-preview-api-ko](https://github.com/sgc3a85h2-33l/gemini-3-1-flash-image-preview-api-ko) · [nano-banana-2-api-ko](https://github.com/jjb18r/nano-banana-2-api-ko) · [gemini-3-pro-image-preview-api-ko](https://github.com/a-me4/gemini-3-pro-image-preview-api-ko) · [nano-banana-pro-api-ko](https://github.com/wompd2anc/nano-banana-pro-api-ko)
+- **Topic hubs** — every build of this model, all languages: [gemini-2-5-flash-image-preview](https://github.com/topics/gemini-2-5-flash-image-preview) · [gemini-2-5-flash-image-preview-api](https://github.com/topics/gemini-2-5-flash-image-preview-api)
+
+This repository is one build in a cross-linked set of API guides for the same model family; each language build links back to the others.
+<!-- /related-repos:auto -->
 
 ## Attributed links (how this repository is measured)
 
